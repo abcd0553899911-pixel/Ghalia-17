@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ليوم ميلادك السابع عشر 🌷</title>
+<style>
+:root{
+  --ink:#3b2f35;
+  --rose:#e87da6;
+  --paper:#fffaf0;
+}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Tahoma,Arial,sans-serif;background:#dff4ff;color:var(--ink)}
+input{position:fixed;opacity:0;pointer-events:none}
+label{cursor:pointer;-webkit-tap-highlight-color:transparent;user-select:none}
+
+#world{
+  position:fixed;inset:0;overflow:hidden;
+  background:linear-gradient(180deg,#cceeff 0%,#f9fdff 67%);
+}
+.sun{
+  position:absolute;top:7vh;left:7vw;width:70px;height:70px;border-radius:50%;
+  background:#ffe58a;box-shadow:0 0 52px rgba(255,224,117,.75)
+}
+.cloud{position:absolute;width:120px;height:36px;background:#fff;border-radius:999px;opacity:.9;filter:drop-shadow(0 6px 9px rgba(80,110,140,.08))}
+.cloud:before,.cloud:after{content:"";position:absolute;background:#fff;border-radius:50%}
+.cloud:before{width:48px;height:48px;left:18px;top:-18px}
+.cloud:after{width:58px;height:58px;right:12px;top:-25px}
+.c1{top:12%;left:-150px;animation:cloudMove 26s linear infinite}
+.c2{top:21%;left:-220px;transform:scale(.75);animation:cloudMove 34s linear 3s infinite}
+.c3{top:7%;left:-300px;transform:scale(.9);animation:cloudMove 40s linear 8s infinite}
+@keyframes cloudMove{to{left:110vw}}
+
+.hill{position:absolute;bottom:20%;border-radius:50% 50% 0 0}
+.h1{left:-10%;width:70%;height:24%;background:#a8df8f}
+.h2{right:-12%;width:72%;height:28%;background:#91d17c}
+.ground{position:absolute;bottom:0;left:0;width:100%;height:31%;background:linear-gradient(#7fd36f,#4fae55)}
+.grassline{position:absolute;bottom:29%;left:0;width:100%;height:18px;background:repeating-linear-gradient(110deg,transparent 0 9px,rgba(45,126,52,.3) 9px 11px)}
+
+.spark{position:absolute;width:5px;height:5px;border-radius:50%;background:#fff7ae;box-shadow:0 0 10px #fff4a4;opacity:.15;animation:spark 3.5s ease-in-out infinite}
+@keyframes spark{50%{opacity:1;transform:translateY(-13px) scale(1.2)}}
+.s1{left:13%;bottom:42%;animation-delay:.4s}
+.s2{left:27%;bottom:50%;animation-delay:1.2s}
+.s3{left:54%;bottom:45%;animation-delay:2s}
+.s4{left:82%;bottom:49%;animation-delay:.8s}
+.s5{left:68%;bottom:57%;animation-delay:2.7s}
+.s6{left:42%;bottom:54%;animation-delay:1.7s}
+
+.butterfly{position:absolute;font-size:20px;z-index:7;animation:fly 8s ease-in-out infinite;opacity:.82}
+@keyframes fly{
+  0%{transform:translate(0,0)}
+  25%{transform:translate(55px,-22px)}
+  50%{transform:translate(115px,8px)}
+  75%{transform:translate(58px,-36px)}
+  100%{transform:translate(0,0)}
+}
+
+.intro{
+  position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:20px;
+  background:radial-gradient(circle at 50% 24%,rgba(255,255,255,.97),rgba(255,255,255,.72) 30%,transparent 60%),linear-gradient(#d9f3ff,#fff8fb 72%,#dcefd4);
+  transition:.6s
+}
+.intro-card{
+  width:min(92vw,560px);padding:38px 24px;border-radius:30px;text-align:center;
+  background:rgba(255,255,255,.74);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.9);
+  box-shadow:0 20px 70px rgba(69,91,110,.18)
+}
+.intro h1{font-size:clamp(28px,6vw,48px);margin:0 0 12px}
+.intro p{opacity:.7;margin:0 0 24px;font-size:clamp(15px,3.5vw,18px)}
+.start-btn,.action-btn{
+  display:inline-block;border-radius:999px;padding:14px 26px;background:#fff;color:#754c61;
+  box-shadow:0 10px 28px rgba(116,76,97,.15);font-weight:800
+}
+
+#start:checked ~ .intro{opacity:0;visibility:hidden;pointer-events:none}
+
+.captions{
+  position:absolute;top:max(18px,env(safe-area-inset-top));left:50%;transform:translateX(-50%);
+  width:min(88vw,680px);z-index:30
+}
+.caption{
+  position:absolute;left:50%;transform:translateX(-50%);
+  width:100%;padding:12px 18px;border-radius:20px;text-align:center;
+  background:rgba(255,255,255,.8);backdrop-filter:blur(8px);box-shadow:0 8px 24px rgba(70,95,110,.12);
+  font-weight:700;font-size:clamp(14px,3.4vw,18px);opacity:0
+}
+#start:checked ~ #world .cap1{animation:showCap 3s 0.4s forwards}
+#start:checked ~ #world .cap2{animation:showCap 3s 3.6s forwards}
+#start:checked ~ #world .cap3{animation:showCap 3s 7.0s forwards}
+#start:checked ~ #world .cap4{animation:showCap 3s 10.4s forwards}
+#start:checked ~ #world .cap5{animation:showCap 3s 13.8s forwards}
+#start:checked ~ #world .cap6{animation:showCap 3s 17.2s forwards}
+#start:checked ~ #world .cap7{animation:showCap 3s 20.6s forwards}
+@keyframes showCap{
+  0%{opacity:0;transform:translateX(-50%) translateY(6px)}
+  12%{opacity:1;transform:translateX(-50%) translateY(0)}
+  88%{opacity:1;transform:translateX(-50%) translateY(0)}
+  100%{opacity:0;transform:translateX(-50%) translateY(-4px)}
+}
+
+.flower{
+  position:absolute;left:44%;bottom:28%;width:80px;height:155px;z-index:9;transform:translateX(-50%)
+}
+.stem{position:absolute;left:50%;bottom:0;width:7px;height:95px;background:#2f9c52;border-radius:20px;transform:translateX(-50%)}
+.leaf{position:absolute;width:30px;height:15px;background:#51b967;border-radius:100% 0 100% 0}
+.l1{left:10px;bottom:48px;transform:rotate(-18deg)}
+.l2{right:8px;bottom:65px;transform:scaleX(-1) rotate(-22deg)}
+.blossom{position:absolute;top:0;left:50%;width:78px;height:78px;transform:translateX(-50%) scale(.06) rotate(-20deg);opacity:0}
+.petal{position:absolute;width:34px;height:44px;background:radial-gradient(circle at 35% 28%,#ffd7e5,#f06292 72%);border-radius:55% 55% 48% 48%;transform-origin:50% 75%}
+.p1{left:22px;top:0}.p2{left:3px;top:20px;transform:rotate(-62deg)}.p3{right:3px;top:20px;transform:rotate(62deg)}.p4{left:12px;bottom:1px;transform:rotate(-20deg)}.p5{right:12px;bottom:1px;transform:rotate(20deg)}
+.core{position:absolute;width:25px;height:25px;border-radius:50%;background:#ffd75a;left:27px;top:28px;z-index:3}
+
+#start:checked ~ #world .blossom{animation:bloom 1.6s 1.1s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes bloom{to{transform:translateX(-50%) scale(1) rotate(0);opacity:1}}
+
+.char{position:absolute;bottom:25.5%;width:96px;height:176px;z-index:14;transform-origin:50% 100%}
+.name{
+  position:absolute;top:-30px;left:50%;transform:translateX(-50%);padding:5px 11px;border-radius:999px;
+  background:rgba(255,255,255,.94);box-shadow:0 5px 14px rgba(50,60,75,.15);font-size:16px;font-weight:800;white-space:nowrap
+}
+.head{position:absolute;left:29px;top:14px;width:34px;height:38px;border-radius:48%;background:#f2c7a5;z-index:3}
+.hair{position:absolute;left:27px;top:9px;width:38px;height:22px;border-radius:55% 55% 28% 28%;background:#3b2b25;z-index:4}
+.eye{position:absolute;top:31px;width:3px;height:3px;border-radius:50%;background:#2c2526;z-index:5}
+.e1{left:39px}.e2{left:50px}
+.smile{position:absolute;left:42px;top:40px;width:10px;height:5px;border-bottom:2px solid #9a5b61;border-radius:0 0 10px 10px;z-index:5}
+.torso{position:absolute;top:49px;left:23px;width:45px;height:55px;border-radius:15px 15px 10px 10px}
+.arm{position:absolute;top:57px;width:11px;height:46px;background:#f2c7a5;border-radius:10px;transform-origin:50% 0}
+.arm.l{left:17px;transform:rotate(14deg)}
+.arm.r{right:17px;transform:rotate(-14deg)}
+.leg{position:absolute;top:99px;width:12px;height:50px;background:#303642;border-radius:10px;transform-origin:50% 0}
+.leg.l{left:31px}.leg.r{left:49px}
+
+.boy{left:-120px}
+.boy .torso{background:#4778d1}
+
+.girl{left:74%;transform:scaleX(-1)}
+.girl .name{transform:translateX(-50%) scaleX(-1)}
+.girl .head{
+  left:34px;top:15px;width:32px;height:39px;border-radius:50%;
+  background:#f2c7a5;
+  z-index:2;
+}
+.girl .hair{
+  left:24px;top:7px;width:50px;height:46px;
+  border-radius:52% 52% 38% 38%;
+  background:#3b2b25;
+  z-index:6;
+  transform:none;
+  box-shadow:inset 0 -4px 0 rgba(0,0,0,.05);
+}
+.girl .hair::before{
+  content:"";
+  position:absolute;
+  left:5px;right:5px;bottom:-11px;height:23px;
+  background:#3b2b25;
+  border-radius:0 0 44% 44%;
+}
+.girl .hair::after{
+  content:"";
+  position:absolute;
+  left:9px;top:6px;width:30px;height:7px;
+  border-top:2px solid rgba(255,255,255,.10);
+  border-radius:50%;
+}
+.girl .torso{
+  left:30px;top:52px;width:34px;height:54px;border-radius:18px 16px 10px 10px;background:#ef8caf;
+}
+.girl .skirt{
+  position:absolute;left:23px;top:97px;width:55px;height:42px;background:#f3a0bd;
+  clip-path:polygon(25% 0,78% 0,100% 100%,0 100%);border-radius:0 0 12px 12px
+}
+.girl .eye.e1,.girl .eye.e2,.girl .smile,.girl .nose{display:none!important}
+.girl .arm.l{left:24px;transform:rotate(14deg)}
+.girl .arm.r{right:26px;transform:rotate(-8deg)}
+.girl .leg{top:132px;height:30px}
+.girl .leg.l{left:39px}
+.girl .leg.r{left:56px}
+
+#heldFlower{
+  position:absolute;right:-5px;top:70px;font-size:31px;opacity:0;z-index:20
+}
+#heart{
+  position:absolute;left:36px;top:57px;font-size:22px;opacity:0;z-index:18
+}
+#noteProp{
+  position:absolute;left:65%;bottom:42%;z-index:19;width:58px;height:40px;border-radius:8px;
+  background:#fff8dc;border:1px solid #decf9d;box-shadow:0 5px 12px rgba(60,50,35,.12);
+  display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#806f4a;opacity:0
+}
+.letter-trigger{
+  position:absolute;z-index:40;left:50%;bottom:7%;transform:translateX(-50%);
+  padding:12px 18px;border-radius:999px;background:rgba(255,255,255,.92);box-shadow:0 10px 24px rgba(70,80,85,.16);
+  font-weight:800;opacity:0;pointer-events:none
+}
+
+#start:checked ~ #world .boy{animation:boyPath 18s 6.8s forwards}
+@keyframes boyPath{
+  0%{left:-120px}
+  22%{left:33%}
+  34%{left:33%}
+  44%{left:36%}
+  65%{left:58%}
+  100%{left:58%}
+}
+#start:checked ~ #world .boy .leg.l{animation:runL .36s 6.8s alternate 12, runL .36s 15.2s alternate 10}
+#start:checked ~ #world .boy .leg.r{animation:runR .36s 6.8s alternate 12, runR .36s 15.2s alternate 10}
+#start:checked ~ #world .boy .arm.l{animation:armL .36s 6.8s alternate 12, armL .36s 15.2s alternate 10}
+#start:checked ~ #world .boy .arm.r{animation:armR .36s 6.8s alternate 12, armR .36s 15.2s alternate 10}
+@keyframes runL{to{transform:rotate(30deg)}}@keyframes runR{to{transform:rotate(-30deg)}}@keyframes armL{to{transform:rotate(-30deg)}}@keyframes armR{to{transform:rotate(30deg)}}
+
+#start:checked ~ #world .flower{animation:pickFlower .8s 13.5s forwards}
+@keyframes pickFlower{to{opacity:0;transform:translateX(-50%) scale(.65) translateY(12px)}}
+#start:checked ~ #world #heldFlower{animation:showFlower .5s 13.8s forwards}
+@keyframes showFlower{to{opacity:1}}
+
+#start:checked ~ #world .boy .arm.r{animation:armR .36s 6.8s alternate 12, pickArm .9s 13.3s forwards, armR .36s 15.2s alternate 10}
+@keyframes pickArm{
+  0%{transform:rotate(-14deg)}
+  45%{transform:rotate(-55deg)}
+  100%{transform:rotate(-10deg)}
+}
+
+#start:checked ~ #world #heart{animation:heartShow .4s 20.2s forwards,beat .9s 20.6s infinite}
+@keyframes heartShow{to{opacity:1}}
+@keyframes beat{0%,100%{transform:scale(.8)}35%{transform:scale(1.22)}60%{transform:scale(.95)}}
+
+#start:checked ~ #world #noteProp{animation:noteShow .9s 23.5s forwards}
+@keyframes noteShow{
+  0%{opacity:0;transform:translate(-18px,8px) scale(.72) rotate(-8deg)}
+  50%{opacity:1;transform:translate(-5px,-2px) scale(1) rotate(0)}
+  100%{opacity:1;transform:translate(0,0) scale(1) rotate(0)}
+}
+#start:checked ~ #world .letter-trigger{animation:triggerShow .6s 24.7s forwards}
+@keyframes triggerShow{to{opacity:1;pointer-events:auto}}
+
+.overlay{
+  position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding:18px;
+  background:rgba(30,45,48,.5);backdrop-filter:blur(8px);opacity:0;visibility:hidden;pointer-events:none;transition:.5s
+}
+#openletter:checked ~ .overlay{opacity:1;visibility:visible;pointer-events:auto}
+.paper{
+  position:relative;width:min(94vw,820px);max-height:90vh;overflow:auto;
+  padding:34px clamp(18px,4vw,42px) 28px;border-radius:26px;
+  background:linear-gradient(rgba(255,255,255,.55),rgba(255,255,255,.55)),repeating-linear-gradient(0deg,#fff8e9 0 26px,#fff5df 26px 27px);
+  box-shadow:0 30px 90px rgba(22,31,34,.28);border:1px solid #ead8ac
+}
+.paper:before,.paper:after{content:"🌷";position:absolute;top:18px;font-size:22px;opacity:.65}
+.paper:before{right:20px}.paper:after{left:20px}
+.paper h2{text-align:center;margin:0 0 22px;font-size:clamp(24px,5vw,36px);color:#8a5367}
+.message{white-space:pre-line;line-height:2.05;text-align:center;font-size:clamp(16px,3.5vw,21px)}
+.finish{text-align:center;margin-top:26px;font-size:clamp(20px,4vw,28px);font-weight:800;color:#7a4b60}
+.actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+.action-btn{padding:10px 16px;background:#f3e4ea;box-shadow:none}
+
+@media(max-width:700px){
+  .boy{transform:scale(.88)}
+  .girl{left:69%;transform:scale(-.88,.88)}
+  .flower{left:42%}
+  @keyframes boyPath{
+    0%{left:-120px}
+    22%{left:31%}
+    34%{left:31%}
+    44%{left:34%}
+    65%{left:54%}
+    100%{left:54%}
+  }
+}
+</style>
+</head>
+<body>
+<input id="start" type="checkbox">
+<input id="openletter" type="checkbox">
+
+<div class="intro">
+  <div class="intro-card">
+    <h1>ليوم ميلادك السابع عشر 🌷</h1>
+    <p>حكاية صغيرة تبدأ بوردة… وتنتهي برسالة لكِ.</p>
+    <label class="start-btn" for="start">ابدئي الحكاية</label>
+  </div>
+</div>
+
+<div id="world">
+  <div class="sun"></div>
+  <div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div>
+  <div class="hill h1"></div><div class="hill h2"></div>
+
+  <div class="spark s1"></div><div class="spark s2"></div><div class="spark s3"></div>
+  <div class="spark s4"></div><div class="spark s5"></div><div class="spark s6"></div>
+
+  <div class="butterfly" style="left:16%;bottom:40%">🦋</div>
+  <div class="butterfly" style="left:64%;bottom:44%;animation-delay:2.4s">🦋</div>
+
+  <div class="captions">
+    <div class="caption cap1">في أرضٍ خضراء هادئة… كانت هناك وردة صغيرة 🌷</div>
+    <div class="caption cap2">تفتّحت الوردة بهدوء… وكأنها تنتظر هذه الحكاية ✨</div>
+    <div class="caption cap3">ومن بعيد… جاء مشعل يركض.</div>
+    <div class="caption cap4">اقترب من الوردة، وتوقّف عندها 🌷</div>
+    <div class="caption cap5">أخذها بعناية… ثم حملها معه.</div>
+    <div class="caption cap6">وحين اقترب من غاليه… بدأ قلبه ينبض أسرع ❤️</div>
+    <div class="caption cap7">أعطاها الوردة… ثم أخرج من جيبه رسالة صغيرة 💌</div>
+  </div>
+
+  <div class="flower">
+    <div class="stem"></div>
+    <div class="leaf l1"></div><div class="leaf l2"></div>
+    <div class="blossom">
+      <div class="petal p1"></div><div class="petal p2"></div><div class="petal p3"></div>
+      <div class="petal p4"></div><div class="petal p5"></div><div class="core"></div>
+    </div>
+  </div>
+
+  <div class="char boy">
+    <div class="name">مشعل</div>
+    <div class="hair"></div><div class="head"></div><div class="eye e1"></div><div class="eye e2"></div><div class="smile"></div>
+    <div class="torso"></div><div class="arm l"></div><div class="arm r"></div><div class="leg l"></div><div class="leg r"></div>
+    <div id="heldFlower">🌷</div><div id="heart">❤️</div>
+  </div>
+
+  <div class="char girl">
+    <div class="name">غاليه</div>
+    <div class="hair"></div><div class="head"></div><div class="eye e1"></div><div class="eye e2"></div><div class="smile"></div>
+    <div class="nose"></div>
+    <div class="torso"></div><div class="arm l"></div><div class="arm r"></div><div class="skirt"></div><div class="leg l"></div><div class="leg r"></div>
+  </div>
+
+  <div id="noteProp">رسالة</div>
+  <label class="letter-trigger" for="openletter">افتحي الرسالة 💌</label>
+
+  <div class="ground"></div>
+  <div class="grassline"></div>
+</div>
+
+<div class="overlay">
+  <div class="paper">
+    <h2>إلى غاليه 🌷</h2>
+    <div class="message">كل عام و انتي بخير يا احلى لولي بالدنيا ، احبك 🌷🥹
+
+مُبَارَكٌ سَبْعَ عَشْرَةً، وَالحُسْنُ يَزْهُو بِمُحَيَّاكِ
+كَأَنَّ السَّنَةَ السَّبْعَ عَشْرَةَ جَاءَتْ تَزْدَادُ بَهَاءَ
+
+وَيَا غَالِيَةُ، مَا البَدْرُ إِلَّا تَشْبِيهٌ يَقْصُرُ عَنْ مَزَايَاكِ
+فَفِي وَجْهِكِ الحُسْنُ، وَفِي حَيَائِكِ لِلْحُسْنِ ضِيَاءَ
+
+وَإِنْ قِيلَ: أَيْنَ الجَمَالُ؟ أَشَرْتُ دُونَ كَلَامٍ إِلَى مُحَيَّاكِ
+فَبَعْضُ الجَمَالِ يُرَى، وَبَعْضُهُ يَسْكُنُ الرُّوحَ صَفَاءَ
+
+دَعَوْتُ إِلَهِي أَنْ يُطِيلَ بِالخَيْرِ عُمْرَكِ وَيَرْعَاكِ
+وَيَجْعَلَ سِنِينَكِ تَوْفِيقًا وَفَرَحًا وَهَنَاءَ
+
+وَيَحْفَظَ قَلْبًا طَابَ حَتَّى زَادَ فِي عَيْنِي مَزَايَاكِ
+وَيَكْتُبَ لَكِ فِي كُلِّ عَامٍ مِنْ جَمِيلِ القَدَرِ عَطَاءَ</div>
+
+    <div class="finish">يوم ميلاد سعيد يا غاليه 🌷</div>
+
+    <div class="actions">
+      <label class="action-btn" for="openletter">إغلاق الرسالة</label>
+      <label class="action-btn" for="start">إعادة الحكاية</label>
+    </div>
+  </div>
+</div>
+</body>
+</html>
